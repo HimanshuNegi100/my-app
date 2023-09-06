@@ -32,11 +32,12 @@ const BookList = () => {
 };
 
 const Book = (props) => {
+  const { author, img, title } = props;
   return (
     <article className="book">
-      <img src={props.img} alt={props.title} />
-      <h2>{props.title}</h2>
-      <h2>{props.author}</h2>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h2>{author}</h2>
     </article>
   );
 };
