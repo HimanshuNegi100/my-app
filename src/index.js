@@ -21,7 +21,15 @@ const BookList = () => {
         author={firstBook.author}
         title={firstBook.title}
         img={firstBook.img}
-      />
+      >
+        <p>
+          The props.children property allows you to create a generic template
+          component that can be modified by the parent when it is invoked. This
+          means that a parent component can pass whatever is needed in the child
+          component, even generated layout features that can then be rendered by
+          the child.
+        </p>
+      </Book>
       <Book
         author={secondBook.author}
         title={secondBook.title}
@@ -31,12 +39,13 @@ const BookList = () => {
   );
 };
 
-const Book = ({ author, img, title }) => {
+const Book = ({ author, img, title, children }) => {
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
       <h2>{author}</h2>
+      {children}
     </article>
   );
 };
