@@ -1,10 +1,32 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-function Greeting() {
-  return <h2>My First Component</h2>;
-}
+import "./index.css";
+
+const BookList = () => {
+  return (
+    <section className="bookList">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
+  );
+};
+
+const Book = () => {
+  return (
+    <article className="book">
+      <img
+        src="https://images-eu.ssl-images-amazon.com/images/I/91bYsX41DVL._AC_UL900_SR900,600_.jpg"
+        alt="Atomic Habits"
+      />
+      <h2>Atomic Habits</h2>
+      <h2>James Clear</h2>
+    </article>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Greeting />);
+root.render(<BookList />);
