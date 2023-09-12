@@ -32,17 +32,11 @@ const BookList = () => {
 };
 
 const Book = ({ author, title, img, getBook, id }) => {
-  const displayTitle = () => {
-    console.log(title);
-  };
-  const getSingleBook = () => {
-    getBook(id);
-  };
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
-      <button onClick={getSingleBook}>Display Title </button>
+      <button onClick={() => getBook(id)}>Display Book</button>
       <h2>{author}</h2>
     </article>
   );
