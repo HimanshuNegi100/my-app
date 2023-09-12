@@ -25,21 +25,24 @@ const BookList = () => {
   return (
     <section className="bookList">
       {books.map((book) => {
-        return <Book {...book} key={book.id} func={getBook} />;
+        return <Book {...book} key={book.id} getBook={getBook} />;
       })}
     </section>
   );
 };
 
-const Book = ({ author, title, img, func, id }) => {
+const Book = ({ author, title, img, getBook, id }) => {
   const displayTitle = () => {
     console.log(title);
+  };
+  const getSingleBook = () => {
+    getBook(id);
   };
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
-      <button onClick={func(id)}>Display Title </button>
+      <button onClick={getSingleBook}>Display Title </button>
       <h2>{author}</h2>
     </article>
   );
